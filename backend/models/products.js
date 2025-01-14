@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const productSchema = mongoose.Schema({
+const productSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -14,11 +14,10 @@ const productSchema = mongoose.Schema({
         required: true
     }   
 }, {
-    timestamps: true // createdAt, updatedAT fields
+    timestamps: true // createdAt, updatedAt fields
 });
 
 const Product = mongoose.model('Product', productSchema);
 // Mongoose will likely convert this to proudcts, also you can think of each item as individual
 // Schema gives a form of abstraction for data pipeline
-
 export default Product;
