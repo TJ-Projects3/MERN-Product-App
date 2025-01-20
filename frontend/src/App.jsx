@@ -6,6 +6,7 @@ import Homepage from "./pages/Homepage.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 function App() {
+  
   return (
     <Box minH={'100vh'} bg={useColorModeValue("gray.100", "gray.900")}>
       <Navbar />
