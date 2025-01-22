@@ -12,7 +12,7 @@ const Homepage = () => {
   console.log("Products:", products)
 
   return (
-    <Container maxW={'container.sm'} py={12}>
+    <Container maxW={'container.xl'} py={12}>
       <VStack spacing={8}>
         <Text 
 			      fontSize={{ base: "24px", sm: "38px" }}
@@ -27,12 +27,12 @@ const Homepage = () => {
         </Text>
 
         <SimpleGrid
-        column={{
+        columns={{
           base: 1,
           md: 2,
           lg: 3,
         }}
-        spacing={10}
+        gap={5}
         w={"full"}
         >
           {products.map((product) => (
