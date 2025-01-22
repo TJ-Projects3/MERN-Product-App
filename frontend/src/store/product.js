@@ -21,5 +21,14 @@ export const useProductStore = create((set) => ({
             console.error("Error creating product:", error);
             return { success: false, message: "Error creating product" };
         }
+        },
+    fetchProducts: async () => {
+        try {
+            const response = await axios.get("/api/products");
+            const data = response.data;
+            set({ products: data.data });
+        } catch (error) {
+            console.log ("Error fetching products:", console.error)
         }
+    }
 }))

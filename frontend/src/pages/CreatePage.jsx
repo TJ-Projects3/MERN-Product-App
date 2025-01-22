@@ -1,6 +1,6 @@
 import { useColorModeValue } from "@/components/ui/color-mode";
 import { useProductStore } from "@/store/product";
-import { Container, VStack, Box, Heading, Input, Button} from "@chakra-ui/react";
+import { Container, VStack, Box, Heading, Input, Button } from "@chakra-ui/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -13,10 +13,40 @@ const CreatePage = () => {
     const { createProduct } = useProductStore();
 
     const handleAddProduct = async () => {
-        const { success, message } = await createProduct(newProduct);
-        console.log("Success:", success);
-        console.log("Message:", message);
-        return success ? toast.success(message) : toast.error(message)
+        try {
+            const { success, message } = await createProduct(newProduct);
+            console.log("Success:", success)
+            console.log("Message:", message)
+            if (success) {
+                toast.success(message, {
+                    duration: 4000,
+                    style: {
+                        background: "#4BB543",
+                        color: "#fff",
+                    },
+                    icon: '👏',
+                });
+            } else {
+                toast.error(message, {
+                    duration: 4000,
+                    style: {
+                        background: "#FF4C4C",
+                        color: "#fff",
+                    },
+                    icon: '👎',
+                });
+            }
+        } catch (error) {
+            toast.error("An unexpected error occurred", {
+                duration: 4000,
+                style: {
+                    background: "#FF4C4C",
+                    color: "#fff",
+                },
+                icon: '⚠️',
+            });
+        }
+        setNewProduct({ name: "", price: "", image: "" })
     };
 
     return (

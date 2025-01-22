@@ -17,13 +17,13 @@ const Navbar = () => {
       >
         <Link to={"/"}>
           <Text
-			fontSize={{ base: "24px", sm: "38px" }}
-		    fontWeight={"bold"}
-			textTransform={"uppercase"}
-			textAlign={"center"}
+			      fontSize={{ base: "24px", sm: "38px" }}
+		        fontWeight={"bold"}
+			      textTransform={"uppercase"}
+			      textAlign={"center"}
             bgGradient={"to-r"}
-            gradientFrom={"blue.400"} 
-            gradientTo={"pink.500"}
+            gradientFrom={"cyan.500"} 
+            gradientTo={"red.400"}
             bgClip={"text"}
           >
             Product Store 🛒
