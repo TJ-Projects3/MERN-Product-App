@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 
 const ProductCard = ({ product }) => {
     const textColor = useColorModeValue("gray.600", "gray.200")
-    const bg = useColorModeValue("white", "gray.600")
+    const bg = useColorModeValue("white", "gray.700")
     const {deleteProduct} = useProductStore()
     const handleDelete = async (pid) => {
         const { success, message } = await deleteProduct(pid)
@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
         } else {
             toast.success(message, {
             duration: 4000,
-            icon: "✔️",
+            icon: "👍",
             style: {
                 background: "#4BB543",
                 color: "white",
@@ -57,10 +57,10 @@ return (
             </Text>
 
             <HStack spacing={2}>
-                <Button colorScheme="red" onClick={() => handleDelete(product._id)}>
+                <IconButton bg={"#F56565"} onClick={() => handleDelete(product._id)}>
                     <TiDelete />
-                </Button>
-                <IconButton colorScheme={"purple"}>
+                </IconButton>
+                <IconButton bg={"blue.500"}>
                     <CiEdit />
                 </IconButton>
             </HStack>
