@@ -9,7 +9,7 @@ const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     const buttonBg = useColorModeValue("gray.200", "gray.700");
     const textColor = useColorModeValue("black", "white")
-    const buttonHoverBg = useColorModeValue("blue.600", "cyan.700"); // Hover colors
+    const buttonHoverBg = useColorModeValue("gray.300", "gray.400"); // Hover colors
 
     return (
         <Container maxW="1140px" px={4}>
@@ -51,6 +51,7 @@ const Navbar = () => {
                     <Link to={"/create"}>
                         <Button
                             bg={buttonBg}
+                            _hover={{bg: buttonHoverBg}}
                             color={textColor}
                         >
                             <FaCartPlus fontSize={20} />
@@ -59,6 +60,7 @@ const Navbar = () => {
                     <Button
                         bg={buttonBg}
                         color={textColor}
+                        _hover={{bg: buttonHoverBg}}
                         onClick={toggleColorMode}
                     >
                         {colorMode === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
